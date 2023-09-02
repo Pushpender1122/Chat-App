@@ -1,0 +1,43 @@
+.chat-box {
+    background-color: rgb(59, 57, 57);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat {
+    border: 2px solid;
+    width: 50vw;
+    height: 50vh;
+    background-color: white;
+}
+
+.chat-head {
+    background-color: crimson;
+    height: 7vh;
+}
+
+.chat-input {
+    display: flex;
+    align-items: end;
+    height: 100%;
+}
+
+.chat-input>input {
+    width: 100%;
+    height: 12%;
+    border: 0;
+    font-size: x-large;
+}
+
+
+.chat-input>button {
+
+    height: 12%;
+    width: 10%;
+    border: 0;
+    cursor: pointer;
+    background-color: crimson;
+}

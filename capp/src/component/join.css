@@ -1,0 +1,47 @@
+.loginbox {
+    background-color: black;
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.login {
+    height: 50vh;
+    width: 50vw;
+    /* border: 2px solid white; */
+    text-align: center;
+}
+
+.login>img {
+
+    height: 100px;
+}
+
+.login>h1 {
+    font-size: 3rem;
+}
+
+.login form>input {
+    margin-top: 2rem;
+    height: 30px;
+    color: black;
+    width: 37%;
+}
+
+.login button {
+    width: 37%;
+    height: 35px;
+    color: black;
+    margin-top: 1rem;
+    background-color: crimson;
+    border: 0;
+    border-radius: 3%;
+    cursor: pointer;
+}
+
+.login button:hover {
+    background-color: rgb(139, 9, 35);
+}
