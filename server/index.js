@@ -21,13 +21,29 @@ io.on("connection", (socket) => {
         socket.emit('welcome', { user: "Admin", message: ` Welcome to the chat ${users[socket.id]}` })
     });
 
+    // socket.on('userDisconnect', () => {
+    //     // Handle user disconnection here
+    //     console.log(`${users[socket.id]} disconnected`);
+    //     socket.broadcast.emit('userLeft', { user: "Admin", message: `${users[socket.id]} left the chat` });
+    //     delete users[socket.id]; // Remove user data
+    // });
+
+
+    // socket.on('disconnect', () => {
+    //     // Handle general disconnections here (e.g., client closes the connection)
+    //     if (users[socket.id]) {
+    //         console.log(`${users[socket.id]} disconnected`);
+    //         socket.broadcast.emit('userLeft', { user: "Admin", message: `${users[socket.id]} left the chat` });
+    //         delete users[socket.id]; // Remove user data
+    //     }
+    // });
     socket.on('disconnect', () => {
         socket.broadcast.emit('leave', { user: "Admin", message: `${users[socket.id]} leave the chat ` })
         console.log("log out")
-        // delete users[socket.id];
+        delete users[socket.id];
     })
-    socket.on('message', (message, id) => {
-        io.emit('sendMessage', { user: users[socket.id], message, id })
+    socket.on('message', ({ message, id }) => {
+        io.emit('sendMessage', { user: users[id], message, id })
     })
     // socket.on('welcome', (data) => {
     //     console.log(data);
